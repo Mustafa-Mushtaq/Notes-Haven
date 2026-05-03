@@ -2,6 +2,8 @@
 
 A full-stack web application for creating, managing, and organizing personal notes with user authentication.
 
+Live demo: https://notes-haven.onrender.com/
+
 ## 🎯 Features
 
 - **User Authentication**: Secure login and registration system
@@ -119,6 +121,12 @@ npm run dev
 ```
 
 The application will be available at `http://localhost:5173` (Vite default port).
+
+## ☁️ Live Deployment
+
+The app is currently deployed at:
+
+- https://notes-haven.onrender.com/
 
 ## 📝 API Endpoints
 
