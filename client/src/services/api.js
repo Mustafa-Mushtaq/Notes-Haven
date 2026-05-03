@@ -1,4 +1,4 @@
-const BASE_URL = "https://notes-haven-api.onrender.com";
+const BASE_URL = "https://notes-haven-api.onrender.com/api";
 
 export const registerUser = async (userData) => {
   const res = await fetch(`${BASE_URL}/auth/register`, {
@@ -22,7 +22,7 @@ export const loginUser = async (userData) => {
   });
 
   return res.json();
-};
+}
 
 export const getNotes = async () => {
   const token = localStorage.getItem("token");
