@@ -10,6 +10,7 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleRegister = async (e) => {
   e.preventDefault();
@@ -66,15 +67,34 @@ const Register = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+              <p className="text-xs text-gray-500 -mt-2 ml-1">
+              Use a valid email address (example: name@gmail.com)
+              </p>
 
-              <input
-                type="password"
-                placeholder="Password"
-                className="px-4 py-3 rounded-lg border-2 border-[#8bd3dd]"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <div className="relative">
+
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-[#8bd3dd] pr-12"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+
+                {/* Eye button */}
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                >
+                  {showPassword ? "🙈" : "👁️"}
+                </button>
+
+              </div>
+              <p className="text-xs text-gray-500 -mt-2 ml-1">
+              Must contain at least 1 uppercase letter and 1 number (min 6 characters) e.g Password123
+              </p>
 
               <button className="bg-[#f582ae] text-white py-3 rounded-lg font-semibold hover:scale-105 transition">
                 Register
